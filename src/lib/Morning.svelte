@@ -1,11 +1,14 @@
 <script>
-  let msg = "Good Morning"
-  const myclick = () => {
-    msg = "Good Evening"
+  // 메시지 바인딩용 변수
+  let msg = '';
+
+  function myclick() {
+    msg = 'HAVE A GOOD DAY, EUGENES!';
   }
 </script>
 
-{msg}
-<button onclick={myclick}>
-  CLICK
+<p>{msg}</p>
+<button on:click={myclick}>
+NICE
 </button>
+
