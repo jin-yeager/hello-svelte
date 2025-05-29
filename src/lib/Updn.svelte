@@ -26,8 +26,8 @@
             text = '더 작은 수를 입력하세요.';
         }
 
-        lines = [...lines, { guess: num, msg: text }];
-        guess = '';  // 입력란 비우기
+        lines.push({ guess: num, msg: text });
+        lines = lines;
     }
 </script>
 
