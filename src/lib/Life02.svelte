@@ -1,16 +1,15 @@
 <script>
-  import {onDestroy, onMount} from "svelte";
+    import {onDestroy, onMount} from "svelte";
 
-  let msg = "LIFE02"
+    let msg = "LIFE02"
 
-  onMount(()=>{
-      console.log("LIFE02 onMount")
-  })
-  onDestroy(()=>{
-      console.log("LIFE02 onDestroy")
-  })
+    onMount(()=>{
+        console.log("LIFE02 onMount")
+    })
+    onDestroy(()=>{
+        console.log("LIFE02 onDestroy")
+    })
 
 </script>
 
-<p>{msg}</p>
-
+{msg}

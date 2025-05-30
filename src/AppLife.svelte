@@ -1,5 +1,4 @@
 <script>
-
     import Life01 from "./lib/Life01.svelte";
     import Life02 from "./lib/Life02.svelte";
 
@@ -12,6 +11,7 @@
 </script>
 
 <main>
+
     {#if flag_life}
         <Life01/>
         <br/>
@@ -19,9 +19,11 @@
         <Life02/>
         <br/>
     {/if}
+
     <button onclick={myclick}>toggle</button>
 
 </main>
 
 <style>
+
 </style>

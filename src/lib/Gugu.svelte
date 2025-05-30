@@ -1,47 +1,48 @@
 <script>
-  let dan = ""
-  let outText = "";
+    let dan = "."
+    let txt = ".."
 
-  const gugu = (dan) => {
-    let text = "";
-    for(let i = 1 ;i<=9; i++) {
-      text += `${dan} x ${i} = ${dan*i}\n`;
+    const myclick = () => {
+        let idan = parseInt(dan)
+
+        let _txt = ""
+
+        for (let i = 1; i <= 9; i++) {
+            _txt += idan + "*" + i + "=" + (idan * i) + "\n"
+
+        }
+        txt = _txt
     }
-      return text;
-  };
-
-  function printGugu(){
-    outText = gugu(dan);
-  }
 
 </script>
 
 <table>
-  <tbody>
+    <tbody>
     <tr>
-      <td>출력단수</td>
-      <td>
-        <input type="text" bind:value="{dan}"/>
-      </td>
+        <td>출력단수</td>
+        <td>
+            <input type="text" bind:value={dan}/>
+        </td>
     </tr>
     <tr>
-      <td colspan="2">
-        <input type="button" onclick={printGugu()} value="출력하기"/>
-      </td>
+        <td colspan="2">
+            <input type="button" onclick={myclick} value="출력하기"/>
+        </td>
     </tr>
     <tr>
-      <td colspan="2">
-        <textarea rows="13" cols="17">{outText}</textarea>
-
-      </td>
+        <td colspan="2">
+            <textarea rows="13" cols="17">{txt}</textarea>
+        </td>
     </tr>
-  </tbody>
+    </tbody>
 </table>
 <style>
-  table,tr,td{
-    border:1px solid grey;
-  }
-  input[type='text']{
-    width: 40px;
-  }
+    table, tr, td {
+        border: 1px solid gray;
+    }
+
+    input[type='text'] {
+        width: 40px;
+    }
+
 </style>

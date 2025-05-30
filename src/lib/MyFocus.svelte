@@ -1,14 +1,11 @@
 <script>
-    let inputEl;
+let myobj
 
-    function focusInput() {
-        inputEl.focus();
-    }
+const myclick = () => {
+    myobj.focus()
+}
+
 </script>
 
-<input bind:this={inputEl} type="text" />
-
-<button on:click={focusInput}>
-    FOCUS
-</button>
-
+<input type="text" bind:this={myobj}/>
+<button onclick={myclick} >FOCUS</button>

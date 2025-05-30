@@ -1,52 +1,63 @@
 <script>
-  let mine = ""
-  let com = 0
-  let result = ""
+let mine = "."
+let com = ".."
+let result = "..."
 
-  function myclick() {
-    if (mine !== "홀" && mine !== "짝") {
-      result = "홀 또는 짝을 입력해주세요"
-      com = 0
-      return
-    }
+const myclick = () => {
+    console.log("mine",mine)
+    console.log("com",com)
+    console.log("result",result)
 
-    const num = Math.floor(Math.random() * 10) + 1
-    com = num
+	var rnd = Math.random();
+	if(rnd>0.5){
+		com = "홀";
+	}else{
+		com = "짝";
+	}
+    if(mine == com){
+		result = "이김";
+	} else {
+		result = "짐";
+	}
+}
 
-    const parity = num % 2 === 0 ? "짝" : "홀"
-
-    result = mine === parity ? "이겼습니다!" : "졌습니다!"
-  }
 </script>
-
-
 <table>
-  <tbody>
-  <tr>
-    <td>내 선택</td>
-    <td>
-      <input type="text" bind:value={mine} placeholder="홀 또는 짝">
-    </td>
-  </tr>
-  <tr>
-    <td>컴퓨터 숫자</td>
-    <td>
-      <input type="number" bind:value={com} readonly>
-    </td>
-  </tr>
-  <tr>
-    <td>결과</td>
-    <td>
-      <input type="text" bind:value={result} readonly>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <input type="button" on:click={myclick} value="게임하기">
-    </td>
-  </tr>
-  </tbody>
+    <tbody>
+        <tr>
+            <td> 나</td>
+            <td>
+                <input type="text" bind:value={mine} >
+            </td>
+        </tr>
+        <tr>
+            <td> 컴</td>
+            <td>
+                <input type="text" value={com} >
+            </td>
+        </tr>
+        <tr>
+            <td> 결과</td>
+            <td>
+                <input type="text" value={result} >
+            </td>
+        </tr>
+        <tr>
+
+            <td colspan="2">
+                <input type="button" value="게임하기" onclick={myclick} />
+            </td>
+        </tr>
+
+    </tbody>
+
 </table>
 <style>
+    input[type='text']{
+        width: 40px;
+    }
+    table,tr,td{
+        border: 1px  solid gainsboro;
+    }
 
 </style>
